@@ -1,0 +1,43 @@
+<page title="Home">
+
+  <body: class="front-page"/>
+
+  <content:>
+    <header class="content-header">
+      <h1>Welcome to <app-name/></h1>
+      <section class="welcome-message">
+        <% if current_user.guest? && !current_user.signed_up? %>
+	        <h3>This application helps you maintain a record of your things to do !</h3>
+	        <ul>
+	          <li>To start using this tiny app register first.</li>
+	          <li>Next create a few projects.</li>
+	          <li>For every project create a few tasks.</li>
+	          <li>As you go on finishing the tasks simply mark them as done.</li>
+	          <li>Thats it !</li>
+	        </ul>
+	    <% else %>
+	        <h3>Following are the projects you are assigned to :-</h3>
+	        <ul>
+		       <% current_user.project_assignments.collect{|pa| pa.tasks}.flatten.each do |task| %>
+		          <li><%= task.name.to_s %></li>
+		       <% end %>
+	        </ul>
+        <% end %>
+        
+    
+        <% if User.count == 0 -%>
+          <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+          <do with="&User.new"><% this.exempt_from_edit_checks = true %>
+            <signup-form/>
+          </do>
+        <% end -%>
+        
+      
+      </section>
+    </header>
+
+    <section class="content-body">
+    </section>
+  </content:>
+  
+</page>

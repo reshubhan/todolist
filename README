@@ -1,0 +1,10 @@
+#Welcome to this implementation of a todolist. This is somewhat like a bug tracking system.
+
+#Requires Rails version 2.2.3
+
+#Implemented using Hobo.
+
+#Try it out and add code to it to help everybody learn.
+
+#For mails and all give the smtp server settings in some environment file, but don't commit it.
+

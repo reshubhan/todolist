@@ -1,0 +1,23 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: todolist_dev
+  username: suman
+  password: 04ma2002
+  host: localhost
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: todolist_test
+  username: suman
+  password: 04ma2002
+  host: localhost
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: todolist_prod
+  username: suman
+  password: 04ma2002
+  host: localhost
